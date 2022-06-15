@@ -27,3 +27,11 @@ body {
     z-index: 2;
     visibility: hidden;
 }
+
+.project-form {
+    visibility: hidden;
+}
+
+.project-item {
+    cursor: pointer;
+}
