@@ -1,6 +1,6 @@
 const allTasks = document.querySelector(".task-list");
 
-function saveTask(name, obj, project) {
+function saveTask(obj, project) {
   let jsonString = localStorage.getItem(project)
   let retrievedObject = JSON.parse(jsonString);
   retrievedObject.children.push(obj);
