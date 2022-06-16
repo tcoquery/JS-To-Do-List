@@ -21,31 +21,31 @@ newProject.addEventListener("click", () => {
     projectForm.style.visibility = "visible";
 })
 
-createTask.addEventListener("click", () => {
-    const title = document.getElementById("title").value;
-    const description = document.getElementById("description").value;
-    const date = document.getElementById("date").value;
-    const lastTask = task(title, description, date);
-    saveTask(lastTask.title, lastTask);
-    taskForm.style.visibility = "hidden";
-})
 
 createProject.addEventListener("click", () => { 
     const projectName = document.getElementById("project-name").value;
     console.log(projectName);
-    const lastProject = project(projectName, {});
+    const lastProject = project(projectName, []);
     saveProject(lastProject.name, lastProject);
     projectForm.style.visibility = "hidden";
 })
 
 loadProjects();
 
-let projects = document.querySelectorAll(".project-item");
+const projects = document.querySelectorAll(".project-item");
 projects.forEach(project => {
     project.addEventListener("click", () => {
         projectTitle.textContent = project.getAttribute("data-value");
     })
 })
 
+createTask.addEventListener("click", () => {
+    const title = document.getElementById("title").value;
+    const description = document.getElementById("description").value;
+    const date = document.getElementById("date").value;
+    const lastTask = task(title, description, date);
+    saveTask(lastTask.title, lastTask, projectTitle.textContent);
+    taskForm.style.visibility = "hidden";
+})
 
 

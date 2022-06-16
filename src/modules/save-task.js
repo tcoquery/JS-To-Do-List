@@ -1,10 +1,10 @@
 const allTasks = document.querySelector(".task-list");
 
-function saveTask(name, obj) {
-  localStorage.setItem(name, JSON.stringify(obj));
-  const list = document.createElement("li");
-  list.textContent = obj.title + " " + obj.description + " " + obj.date;
-  allTasks.appendChild(list);
+function saveTask(name, obj, project) {
+  let jsonString = localStorage.getItem(project)
+  let retrievedObject = JSON.parse(jsonString);
+  retrievedObject.children.push(obj);
+  localStorage.setItem(project, JSON.stringify(retrievedObject));
 };
 
 export {saveTask};
