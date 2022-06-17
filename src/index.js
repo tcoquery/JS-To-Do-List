@@ -6,6 +6,7 @@ import { saveProject} from "./modules/save-project";
 import { loadProjects } from "./modules/load-projects";
 import { defaultProject, projectContent } from "./modules/project-content"
 
+
 const newTask = document.getElementById("new-task");
 const newProject = document.getElementById("new-project");
 const createTask = document.getElementById("create-task");
