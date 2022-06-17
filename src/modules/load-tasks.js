@@ -1,3 +1,4 @@
+import { deleteTask } from "./delete-task";
 
 const projectTitle = document.querySelector(".project-name");
 const allTasks = document.querySelector(".task-list");
@@ -9,6 +10,8 @@ function loadTasks() {
     const listItem = document.createElement("li");
     listItem.textContent = retrievedObject.children[i].title + " " + retrievedObject.children[i].description + " " + retrievedObject.children[i].date;
     listItem.classList.add("task-item");
+    listItem.dataset.index = i;
+    deleteTask(listItem, i)
     allTasks.appendChild(listItem);
   }
 }
