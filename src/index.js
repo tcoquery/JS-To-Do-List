@@ -18,8 +18,14 @@ const createProject = document.getElementById("create-project");
 const projectTitle = document.querySelector(".project-name");
 
 newTask.addEventListener("click", () => {
-    taskForm.style.visibility = "visible";
+    taskForm.style.display = "block";
 })
+
+window.onclick = function(event) {
+    if (event.target == taskForm) {
+        taskForm.style.display = "none";
+    }
+  } 
 
 newProject.addEventListener("click", () => {
     projectForm.style.visibility = "visible";
@@ -28,10 +34,15 @@ newProject.addEventListener("click", () => {
 
 createProject.addEventListener("click", () => { 
     const projectName = document.getElementById("project-name").value;
-    const lastProject = project(projectName, []);
-    saveProject(lastProject.name, lastProject);
-    projectForm.style.visibility = "hidden";
-    projectContent();
+    if (projectName != "") {
+        const lastProject = project(projectName, []);
+        saveProject(lastProject.name, lastProject);
+        projectForm.style.visibility = "hidden";
+        projectContent();
+    } else {
+        return;
+    }
+
 })
 
 loadProjects();
@@ -43,9 +54,14 @@ createTask.addEventListener("click", () => {
     const title = document.getElementById("title").value;
     const description = document.getElementById("description").value;
     const date = document.getElementById("date").value;
-    const lastTask = task(title, description, date);
-    saveTask(lastTask, projectTitle.textContent);
-    taskForm.style.visibility = "hidden";
+    if (title != "" && description != "" && date != "") {
+        const lastTask = task(title, description, date);
+        saveTask(lastTask, projectTitle.textContent);
+        taskForm.style.display = "none";
+    } else {
+        return;
+    }
+
 })
 
 
