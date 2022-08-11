@@ -1,24 +1,76 @@
 body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 30px;
+    background-color: #ff3f66;
     display: flex;
-    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .main {
     display: flex;
+    background-color: white;
+    border-radius:10px;
+    flex-grow: 1;
+    box-shadow: #d40087 0px 7px 29px 0px;
 }
 
 .project-sidebar {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    flex-grow: 0.15;
+}
+
+.project-title {
+    font-size: 1.75em;
+}
+
+.project-list {
+    padding: 0;
+}
+
+input[type=text] {
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+input[type=submit] {
+    padding: 8px 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    cursor: pointer
+}
+
+
+.sidebar-title {
+    font-size: 2.5em;
+}
+
+#new-project, #new-task {
+    background-color: #ff834c; 
+    border: none;
+    color: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    font-size: 20px;
+    margin-left: 15px;
 }
 
 .tasks-body {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    background-color: #e0e0e0 ;
+    background-color: #F6F6F6 ;
+    flex-grow: 2;
 }
 
 .task-form {

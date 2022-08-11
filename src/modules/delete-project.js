@@ -1,8 +1,7 @@
 
 function deleteProject(item) {
-  const deleteButton = document.createElement("button");
-  deleteButton.textContent = "delete";
-  deleteButton.classList.add("delete-button");
+  const deleteButton = document.createElement("i");
+  deleteButton.classList.add("fa-solid fa-trash-can");
   item.appendChild(deleteButton);
   
   deleteButton.addEventListener("click", () => {
