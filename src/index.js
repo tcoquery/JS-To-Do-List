@@ -1,3 +1,7 @@
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/brands'
 import { task } from "./modules/new-task";
 import { saveTask } from "./modules/save-task";
 import { loadTasks } from "./modules/load-tasks";
@@ -36,7 +40,6 @@ loadProjects();
 defaultProject();
 loadTasks();
 projectContent();
-
 
 createTask.addEventListener("click", () => {
     const title = document.getElementById("title").value;
