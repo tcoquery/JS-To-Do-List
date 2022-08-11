@@ -23,14 +23,39 @@ body {
     flex-grow: 0.15;
 }
 
+.sidebar-title {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
 .project-title {
     font-size: 1.75em;
 }
 
 .project-list {
     padding: 0;
+    margin-top: 10px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
+li {
+    font-size: 1.3em;
+    padding: 10px 20px;
+    width: 190px;
+    border-radius: 15px;
+    list-style-type: none;
+}
+
+.li-active {
+    background-color: #EBEBEB;
+}
+
+.fa-trash-can {
+    margin-left: 15px;
+}
+  
 input[type=text] {
     padding: 8px 20px;
     margin: 8px 0;
@@ -48,11 +73,6 @@ input[type=submit] {
     border-radius: 4px;
     box-sizing: border-box; 
     cursor: pointer
-}
-
-
-.sidebar-title {
-    font-size: 2.5em;
 }
 
 #new-project, #new-task {
