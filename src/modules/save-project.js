@@ -1,3 +1,5 @@
+import { deleteProject } from "./delete-project";
+
 const allProjects = document.querySelector(".project-list");
 
 function saveProject(objName, obj) {
@@ -6,6 +8,7 @@ function saveProject(objName, obj) {
   list.textContent = obj.name;
   list.classList.add("project-item")
   list.dataset.value = obj.name;
+  deleteProject(list);
   allProjects.appendChild(list);
 };
 

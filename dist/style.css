@@ -52,6 +52,12 @@ li {
     background-color: #EBEBEB;
 }
 
+.delete-button {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
 .fa-trash-can {
     margin-left: 15px;
 }
