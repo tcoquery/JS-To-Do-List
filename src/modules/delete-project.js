@@ -1,4 +1,3 @@
-
 function deleteProject(item) {
   const deleteButton = document.createElement("button");
   const deleteIcon = document.createElement("i");
@@ -7,12 +6,10 @@ function deleteProject(item) {
   deleteButton.appendChild(deleteIcon)
   item.appendChild(deleteButton);
   deleteButton.addEventListener("click", () => {
-    localStorage.removeItem(item.dataset.value);
     item.remove();
     deleteButton.remove();
+    localStorage.removeItem(item.dataset.value);
   })
 }
-
-
 
 export {deleteProject};

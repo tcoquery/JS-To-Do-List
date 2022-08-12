@@ -2,7 +2,6 @@ import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/regular'
 import { task } from "./modules/new-task";
 import { saveTask } from "./modules/save-task";
-import { loadTasks } from "./modules/load-tasks";
 import { project } from "./modules/new-project";
 import { saveProject} from "./modules/save-project";
 import { loadProjects } from "./modules/load-projects";
@@ -19,6 +18,14 @@ const projectTitle = document.querySelector(".project-name");
 newTask.addEventListener("click", () => {
     taskForm.style.display = "block";
 })
+
+window.onload = function() {
+    let jsonString = localStorage.getItem("Home");
+    if (jsonString == null) {
+        const homeProject = project("Home", []);
+        localStorage.setItem(homeProject.name, JSON.stringify(homeProject));
+    }
+}
 
 window.onclick = function(event) {
     if (event.target == taskForm) {
@@ -44,11 +51,6 @@ createProject.addEventListener("click", () => {
 
 })
 
-loadProjects();
-defaultProject();
-loadTasks();
-projectContent();
-
 createTask.addEventListener("click", () => {
     const title = document.getElementById("title").value;
     const description = document.getElementById("description").value;
@@ -61,3 +63,8 @@ createTask.addEventListener("click", () => {
         return;
     }
 })
+
+loadProjects();
+projectContent();
+defaultProject();
+document.getElementById("home").click();
