@@ -2,8 +2,10 @@ const projectTitle = document.querySelector(".project-name");
 
 function deleteTask(item, index) {
   const deleteButton = document.createElement("button");
-  deleteButton.textContent = "delete";
-  deleteButton.classList.add("delete-button");
+  const deleteIcon = document.createElement("i");
+  deleteButton.className = "delete-button";
+  deleteIcon.className = "fa-regular fa-trash-can";
+  deleteButton.appendChild(deleteIcon)
   item.appendChild(deleteButton);
   deleteButton.addEventListener("click", () => {
       let jsonString = localStorage.getItem(projectTitle.textContent)

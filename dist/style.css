@@ -173,16 +173,30 @@ li {
     padding-left: 0;
 }
 
+.striked {
+    text-decoration-line:line-through;
+    opacity: 30%;
+  }
+
+ input[type=checkbox] {
+    margin-right: 15px;
+ }
+
 .task-item {
     width: auto;
     margin-bottom: 15px;
     background-color: white;
     display: flex;
     align-items: center;
-    justify-content: space;
+    justify-content: space-between;
     padding: 15px 20px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.task-item-left {
+    display: flex;
+    align-items: center;
 }
 
 .task-form {
