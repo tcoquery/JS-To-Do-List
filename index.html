@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <script src="https://kit.fontawesome.com/b62510f54c.js" crossorigin="anonymous"></script>
+    <title>To-Do List</title>
+</head>
+<body> 
+    <div class="main">
+        <div class="project-sidebar">
+            <p class="sidebar-title">ToutDoux</p>
+            <span class="project-title">My Projects <button id="new-project"><i class="fas fa-plus"></i></button></span>
+            <div class="project-list">
+                <li class="project-item" data-value="Home" id="home">Home</li>
+            </div>
+            <div class="project-form">
+                <input type="text" id="project-name" placeholder="Name...">
+                <button id="create-project" class="add-button">Add</button>
+            </div>
+        </div>
+        <div class="tasks-body">
+            <div class="project-header">            
+                <p class="project-name"></p>
+                <span class="task-title">My Tasks <button id="new-task"><i class="fas fa-plus"></i></button></span>
+            </div>
+
+            <ul class="task-list"></ul>
+            <div class="task-form">
+                <div class="form-modal">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Title...">
+                    <label for="description">Description</label>
+                    <input type="text-area" id="description" name="description" placeholder="description..">
+                    <label for="date">Due Date</label>
+                    <input type="date" id="date" name="date">
+                    <button id="create-task" class="add-button">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
